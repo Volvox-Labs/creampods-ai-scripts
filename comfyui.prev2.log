@@ -1,0 +1,987 @@
+** ComfyUI startup time: 2024-03-27 22:09:00.319254
+[2024-03-27 22:09] ** Platform: Windows
+[2024-03-27 22:09] ** Python version: 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]
+[2024-03-27 22:09] ** Python executable: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\python_embeded\python.exe
+[2024-03-27 22:09] ** Log path: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\script_examples\comfyui.log
+[2024-03-27 22:09] Downloading SVD model: svd.safetensors...
+[2024-03-27 22:09] Downloading SVD model: svd_image_decoder.safetensors...
+[2024-03-27 22:09] Downloading SVD model: svd_xt.safetensors...
+[2024-03-27 22:09] Downloading SVD model: svd_xt_image_decoder.safetensors...
+[2024-03-27 22:09] 
+Prestartup times for custom nodes:
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\rgthree-comfy
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Manager
+[2024-03-27 22:09]    0.1 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion
+[2024-03-27 22:09] 
+Total VRAM 16376 MB, total RAM 32508 MB
+[2024-03-27 22:09] Set vram state to: NORMAL_VRAM
+[2024-03-27 22:09] Device: cuda:0 NVIDIA GeForce RTX 4090 Laptop GPU : cudaMallocAsync
+[2024-03-27 22:09] VAE dtype: torch.bfloat16
+[2024-03-27 22:09] Using pytorch cross attention
+[2024-03-27 22:09] Adding extra search path checkpoints path/to/stable-diffusion-webui/models/Stable-diffusion
+[2024-03-27 22:09] Adding extra search path configs path/to/stable-diffusion-webui/models/Stable-diffusion
+[2024-03-27 22:09] Adding extra search path vae path/to/stable-diffusion-webui/models/VAE
+[2024-03-27 22:09] Adding extra search path loras path/to/stable-diffusion-webui/models/Lora
+[2024-03-27 22:09] Adding extra search path loras path/to/stable-diffusion-webui/models/LyCORIS
+[2024-03-27 22:09] Adding extra search path upscale_models path/to/stable-diffusion-webui/models/ESRGAN
+[2024-03-27 22:09] Adding extra search path upscale_models path/to/stable-diffusion-webui/models/RealESRGAN
+[2024-03-27 22:09] Adding extra search path upscale_models path/to/stable-diffusion-webui/models/SwinIR
+[2024-03-27 22:09] Adding extra search path embeddings path/to/stable-diffusion-webui/embeddings
+[2024-03-27 22:09] Adding extra search path hypernetworks path/to/stable-diffusion-webui/models/hypernetworks
+[2024-03-27 22:09] Adding extra search path controlnet path/to/stable-diffusion-webui/models/ControlNet
+[2024-03-27 22:09] Adding C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes to sys.path
+[2024-03-27 22:09] [36mEfficiency Nodes:[0m Attempting to add Control Net options to the 'HiRes-Fix Script' Node (comfyui_controlnet_aux add-on)...[92mSuccess![0m
+[2024-03-27 22:09] [93mEfficiency Nodes Warning:[0m Failed to import python package 'simpleeval'; related nodes disabled.
+[2024-03-27 22:09] 
+[2024-03-27 22:09] Loaded efficiency nodes from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\efficiency-nodes-comfyui
+[2024-03-27 22:09] Loaded ControlNetPreprocessors nodes from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui_controlnet_aux
+[2024-03-27 22:09] [Errno 2] No such file or directory: 'C:\\Users\\mkski\\ComfyUI_windows_portable_nvidia_cu121_or_cpu\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-Advanced-ControlNet\\control/control.py\\__init__.py'
+[2024-03-27 22:09] Could not find AnimateDiff nodes
+[2024-03-27 22:09] Loaded IPAdapter nodes from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_IPAdapter_plus
+[2024-03-27 22:09] Loaded VideoHelperSuite from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-VideoHelperSuite
+[2024-03-27 22:09] Traceback (most recent call last):
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\nodes.py", line 1888, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches\__init__.py", line 3, in <module>
+    from .calculate import *
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches\calculate.py", line 4, in <module>
+    from evalidate import Expr, EvalException, base_eval_model
+ModuleNotFoundError: No module named 'evalidate'
+
+[2024-03-27 22:09] Cannot import C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches module for custom nodes: No module named 'evalidate'
+[2024-03-27 22:09] ### Loading: ComfyUI-Impact-Pack (V4.85.1)
+[2024-03-27 22:09] ### Loading: ComfyUI-Impact-Pack (Subpack: V0.4)
+[2024-03-27 22:09] Traceback (most recent call last):
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\nodes.py", line 1888, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Inference-Core-Nodes\__init__.py", line 1, in <module>
+    from inference_core_nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+ModuleNotFoundError: No module named 'inference_core_nodes'
+
+[2024-03-27 22:09] [Impact Pack] Wildcards loading done.
+[2024-03-27 22:09] Cannot import C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Inference-Core-Nodes module for custom nodes: No module named 'inference_core_nodes'
+[2024-03-27 22:09] Injected samplers: ['k_euler', 'k_euler_a', 'k_lcm']
+[2024-03-27 22:09] ### Loading: ComfyUI-Manager (V2.10)
+[2024-03-27 22:09] ### ComfyUI Revision: 2065 [448d9263] | Released on '2024-03-14'
+[2024-03-27 22:09] ------------------------------------------
+[2024-03-27 22:09] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[2024-03-27 22:09] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[2024-03-27 22:09] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[2024-03-27 22:09] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[2024-03-27 22:09] Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x00000261C6F0D360>
+[2024-03-27 22:09] Traceback (most recent call last):
+[2024-03-27 22:09]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\proactor_events.py", line 116, in __del__
+[2024-03-27 22:09]     self.close()
+[2024-03-27 22:09]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\proactor_events.py", line 108, in close
+[2024-03-27 22:09]     self._loop.call_soon(self._call_connection_lost, None)
+[2024-03-27 22:09]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\base_events.py", line 745, in call_soon
+[2024-03-27 22:09]     self._check_closed()
+[2024-03-27 22:09]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\base_events.py", line 510, in _check_closed
+[2024-03-27 22:09]     raise RuntimeError('Event loop is closed')
+[2024-03-27 22:09] RuntimeError: Event loop is closed
+[2024-03-27 22:09] [34m### N-Suite Revision:[0m [32mdbeb9ae9 [0m
+[2024-03-27 22:09] Current version of packaging: 24.0
+[2024-03-27 22:09] Version of cpuinfo: Not found
+[2024-03-27 22:09] Current version of git: 3.1.42
+[2024-03-27 22:09] Current version of moviepy: 1.0.3
+[2024-03-27 22:09] Current version of cv2: 4.7.0
+[2024-03-27 22:09] Current version of skbuild: 0.17.6
+[2024-03-27 22:09] Version of typing: Not found
+[2024-03-27 22:09] Current version of diskcache: 5.6.3
+[2024-03-27 22:09] Current version of llama_cpp: 0.2.26+cu121
+[2024-03-27 22:09] Current version of timm: 0.9.16
+[2024-03-27 22:09] Traceback (most recent call last):
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\nodes.py", line 1888, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion\__init__.py", line 14, in <module>
+    assert len(svd_checkpoints) > 0, "ERROR: No Stable Video Diffusion checkpoints found. Please download & place them in the ComfyUI/models/svd folder, and restart ComfyUI."
+AssertionError: ERROR: No Stable Video Diffusion checkpoints found. Please download & place them in the ComfyUI/models/svd folder, and restart ComfyUI.
+
+[2024-03-27 22:09] Cannot import C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion module for custom nodes: ERROR: No Stable Video Diffusion checkpoints found. Please download & place them in the ComfyUI/models/svd folder, and restart ComfyUI.
+[2024-03-27 22:09] ------------------------------------------
+[2024-03-27 22:09] [34mComfyroll Studio v1.76 : [92m 175 Nodes Loaded[0m
+[2024-03-27 22:09] ------------------------------------------
+[2024-03-27 22:09] ** For changes, please see patch notes at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/blob/main/Patch_Notes.md
+[2024-03-27 22:09] ** For help, please see the wiki at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki
+[2024-03-27 22:09] ------------------------------------------
+[2024-03-27 22:09] [34mIb Custom Nodes: [92mLoaded[0m
+[2024-03-27 22:09] [92m[tinyterraNodes] [32mLoaded[0m
+[2024-03-27 22:09] [36;20m[comfy_mtb] | INFO -> loaded [96m60[0m nodes successfuly[0m
+[2024-03-27 22:09] [36;20m[comfy_mtb] | INFO -> Some nodes (7) could not be loaded. This can be ignored, but go to http://127.0.0.1:8188/mtb if you want more information.[0m
+[2024-03-27 22:09] 
+[2024-03-27 22:09] [92m[rgthree] Loaded 34 exciting nodes.[0m
+[2024-03-27 22:09] [92m[rgthree] Will use rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] 
+[2024-03-27 22:09] [34mWAS Node Suite: [0mOpenCV Python FFMPEG support is enabled[0m
+[2024-03-27 22:09] [34mWAS Node Suite [93mWarning: [0m`ffmpeg_bin_path` is not set in `C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\was-node-suite-comfyui\was_suite_config.json` config file. Will attempt to use system ffmpeg binaries if available.[0m
+[2024-03-27 22:09] [34mWAS Node Suite: [0mFinished.[0m [32mLoaded[0m [0m211[0m [32mnodes successfully.[0m
+[2024-03-27 22:09] 
+	[3m[93m"Every strike brings me closer to the next home run."[0m[3m - Babe Ruth[0m
+[2024-03-27 22:09] 
+[2024-03-27 22:09] 
+Import times for custom nodes:
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_IPAdapter_plus
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\efficiency-nodes-comfyui
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-VideoHelperSuite
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\sdxl-recommended-res-calc
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Logic
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\cg-use-everywhere
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\masquerade-nodes-comfyui
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_Ib_CustomNodes
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\stability-ComfyUI-nodes
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\cg-image-picker
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui_controlnet_aux
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_essentials
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Fans
+[2024-03-27 22:09]    0.0 seconds (IMPORT FAILED): C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion
+[2024-03-27 22:09]    0.0 seconds (IMPORT FAILED): C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Inference-Core-Nodes
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Keyframe
+[2024-03-27 22:09]    0.0 seconds (IMPORT FAILED): C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Custom-Scripts
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfy-image-saver
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyMath
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\steerable-motion
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_UltimateSDUpscale
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Advanced-ControlNet
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Frame-Interpolation
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\rgthree-comfy
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\Derfuu_ComfyUI_ModdedNodes
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-AnimateDiff-Evolved
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_Comfyroll_CustomNodes
+[2024-03-27 22:09]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfy_mtb
+[2024-03-27 22:09]    0.2 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Impact-Pack
+[2024-03-27 22:09]    0.5 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_tinyterraNodes
+[2024-03-27 22:09]    0.5 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-N-Nodes
+[2024-03-27 22:09]    0.6 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Manager
+[2024-03-27 22:09]    0.6 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-art-venture
+[2024-03-27 22:09]    0.8 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\was-node-suite-comfyui
+[2024-03-27 22:09] 
+[2024-03-27 22:09] Starting server
+
+[2024-03-27 22:09] To see the GUI go to: http://127.0.0.1:8188
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] [32m[rgthree][0m First run patching recursive_output_delete_if_changed and recursive_will_execute.[0m
+[2024-03-27 22:09] [33m[rgthree] Note: [0mIf execution seems broken due to forward ComfyUI changes, you can disable the optimization from rgthree settings in ComfyUI.[0m
+[2024-03-27 22:09] model_type EPS
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:09] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:09] loaded straight to GPU
+[2024-03-27 22:09] Requested to load BaseModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Requested to load SD1ClipModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\comfy\ldm\modules\attention.py:345: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:263.)
+  out = torch.nn.functional.scaled_dot_product_attention(q, k, v, attn_mask=mask, dropout_p=0.0, is_causal=False)
+
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Requested to load AutoencoderKL
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 13.24it/s]
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 6.64 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 3.38 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] model_type EPS
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:09] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:09] loaded straight to GPU
+[2024-03-27 22:09] Requested to load BaseModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Requested to load SD1ClipModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Requested to load AutoencoderKL
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.82it/s]
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 5.08 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 3.09 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] model_type EPS
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:09] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:09] loaded straight to GPU
+[2024-03-27 22:09] Requested to load BaseModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Requested to load SD1ClipModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Requested to load AutoencoderKL
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.55it/s]
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 5.19 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 3.23 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] model_type EPS
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:09] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:09] loaded straight to GPU
+[2024-03-27 22:09] Requested to load BaseModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Requested to load SD1ClipModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Requested to load AutoencoderKL
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.87it/s]
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 5.36 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 3.24 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] model_type EPS
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:09] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:09] loaded straight to GPU
+[2024-03-27 22:09] Requested to load BaseModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Requested to load SD1ClipModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Requested to load AutoencoderKL
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.18it/s]
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 5.35 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:09] Comfy-VFI: Done cache clearing
+[2024-03-27 22:09] Prompt executed in 3.18 seconds
+[2024-03-27 22:09] got prompt
+[2024-03-27 22:09] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:09] model_type EPS
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:09] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:09] loaded straight to GPU
+[2024-03-27 22:09] Requested to load BaseModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Requested to load SD1ClipModel
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Using pytorch attention in VAE
+[2024-03-27 22:09] Requested to load AutoencoderKL
+[2024-03-27 22:09] Loading 1 new model
+[2024-03-27 22:09] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.38it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 5.41 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 3.17 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] model_type EPS
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:10] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:10] loaded straight to GPU
+[2024-03-27 22:10] Requested to load BaseModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Requested to load SD1ClipModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Requested to load AutoencoderKL
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.92it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 5.23 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 3.07 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] model_type EPS
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:10] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:10] loaded straight to GPU
+[2024-03-27 22:10] Requested to load BaseModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Requested to load SD1ClipModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Requested to load AutoencoderKL
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.71it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 5.11 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 3.11 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] model_type EPS
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:10] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:10] loaded straight to GPU
+[2024-03-27 22:10] Requested to load BaseModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Requested to load SD1ClipModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Requested to load AutoencoderKL
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.50it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 5.15 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 3.16 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] model_type EPS
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:10] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:10] loaded straight to GPU
+[2024-03-27 22:10] Requested to load BaseModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Requested to load SD1ClipModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Requested to load AutoencoderKL
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.12it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 5.23 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 3.16 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Prompt executed in 2.63 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] model_type EPS
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:10] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:10] loaded straight to GPU
+[2024-03-27 22:10] Requested to load BaseModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Requested to load SD1ClipModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Requested to load AutoencoderKL
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 27.46it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 22.75it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 5.07 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 3.32 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:10] model_type EPS
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:10] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:10] loaded straight to GPU
+[2024-03-27 22:10] Requested to load BaseModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Requested to load SD1ClipModel
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Using pytorch attention in VAE
+[2024-03-27 22:10] Requested to load AutoencoderKL
+[2024-03-27 22:10] Loading 1 new model
+[2024-03-27 22:10] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 30.28it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 27.42it/s]
+[2024-03-27 22:10] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:10] Comfy-VFI: Done cache clearing
+[2024-03-27 22:10] Prompt executed in 4.62 seconds
+[2024-03-27 22:10] got prompt
+[2024-03-27 22:10] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 2.99 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] model_type EPS
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:11] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:11] loaded straight to GPU
+[2024-03-27 22:11] Requested to load BaseModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Requested to load SD1ClipModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Requested to load AutoencoderKL
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 31.39it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 28.61it/s]
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 4.50 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 3.14 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] model_type EPS
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:11] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:11] loaded straight to GPU
+[2024-03-27 22:11] Requested to load BaseModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Requested to load SD1ClipModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Requested to load AutoencoderKL
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 29.64it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 26.50it/s]
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 4.67 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 3.27 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] model_type EPS
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:11] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:11] loaded straight to GPU
+[2024-03-27 22:11] Requested to load BaseModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Requested to load SD1ClipModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Requested to load AutoencoderKL
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 27.48it/s]
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 5.09 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 4.01 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] model_type EPS
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:11] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:11] loaded straight to GPU
+[2024-03-27 22:11] Requested to load BaseModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Requested to load SD1ClipModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Requested to load AutoencoderKL
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 23.29it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 19.82it/s]
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 7.77 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 5.58 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] model_type EPS
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:11] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:11] loaded straight to GPU
+[2024-03-27 22:11] Requested to load BaseModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Requested to load SD1ClipModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Requested to load AutoencoderKL
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 23.30it/s]
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 7.68 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:11] Comfy-VFI: Done cache clearing
+[2024-03-27 22:11] Prompt executed in 5.05 seconds
+[2024-03-27 22:11] got prompt
+[2024-03-27 22:11] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:11] model_type EPS
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:11] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:11] loaded straight to GPU
+[2024-03-27 22:11] Requested to load BaseModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Requested to load SD1ClipModel
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Using pytorch attention in VAE
+[2024-03-27 22:11] Requested to load AutoencoderKL
+[2024-03-27 22:11] Loading 1 new model
+[2024-03-27 22:12] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 29.52it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 27.28it/s]
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.88 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.61 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] model_type EPS
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:12] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:12] loaded straight to GPU
+[2024-03-27 22:12] Requested to load BaseModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Requested to load SD1ClipModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Requested to load AutoencoderKL
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 30.81it/s]100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 26.94it/s]
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.64 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.63 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] model_type EPS
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:12] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:12] loaded straight to GPU
+[2024-03-27 22:12] Requested to load BaseModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Requested to load SD1ClipModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Requested to load AutoencoderKL
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 29.88it/s]
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.52 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.26 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] Prompt executed in 2.75 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] model_type EPS
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:12] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:12] loaded straight to GPU
+[2024-03-27 22:12] Requested to load BaseModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Requested to load SD1ClipModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Requested to load AutoencoderKL
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 13.42it/s]
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 5.70 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.40 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] model_type EPS
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:12] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:12] loaded straight to GPU
+[2024-03-27 22:12] Requested to load BaseModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Requested to load SD1ClipModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Requested to load AutoencoderKL
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 13.99it/s]
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 5.36 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 4.30 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:12] model_type EPS
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:12] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:12] loaded straight to GPU
+[2024-03-27 22:12] Requested to load BaseModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Requested to load SD1ClipModel
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Using pytorch attention in VAE
+[2024-03-27 22:12] Requested to load AutoencoderKL
+[2024-03-27 22:12] Loading 1 new model
+[2024-03-27 22:12] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.84it/s]
+[2024-03-27 22:12] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:12] Comfy-VFI: Done cache clearing
+[2024-03-27 22:12] Prompt executed in 5.24 seconds
+[2024-03-27 22:12] got prompt
+[2024-03-27 22:12] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 4.43 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] model_type EPS
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:13] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:13] loaded straight to GPU
+[2024-03-27 22:13] Requested to load BaseModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Requested to load SD1ClipModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Requested to load AutoencoderKL
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.31it/s]
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 5.30 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 4.03 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] model_type EPS
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:13] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:13] loaded straight to GPU
+[2024-03-27 22:13] Requested to load BaseModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Requested to load SD1ClipModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Requested to load AutoencoderKL
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.59it/s]
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 5.27 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 3.14 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] model_type EPS
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:13] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:13] loaded straight to GPU
+[2024-03-27 22:13] Requested to load BaseModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Requested to load SD1ClipModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Requested to load AutoencoderKL
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 15.11it/s]
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 5.25 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 3.25 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] model_type EPS
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:13] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:13] loaded straight to GPU
+[2024-03-27 22:13] Requested to load BaseModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Requested to load SD1ClipModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Requested to load AutoencoderKL
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.40it/s]
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 5.28 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 3.24 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] model_type EPS
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:13] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:13] loaded straight to GPU
+[2024-03-27 22:13] Requested to load BaseModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Requested to load SD1ClipModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Requested to load AutoencoderKL
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.18it/s]
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 5.33 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 3.24 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:13] model_type EPS
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:13] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:13] loaded straight to GPU
+[2024-03-27 22:13] Requested to load BaseModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Requested to load SD1ClipModel
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Using pytorch attention in VAE
+[2024-03-27 22:13] Requested to load AutoencoderKL
+[2024-03-27 22:13] Loading 1 new model
+[2024-03-27 22:13] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.26it/s]
+[2024-03-27 22:13] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:13] Comfy-VFI: Done cache clearing
+[2024-03-27 22:13] Prompt executed in 5.30 seconds
+[2024-03-27 22:13] got prompt
+[2024-03-27 22:13] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:14] Comfy-VFI: Done cache clearing
+[2024-03-27 22:14] Prompt executed in 3.24 seconds
+[2024-03-27 22:14] got prompt
+[2024-03-27 22:14] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] model_type EPS
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:14] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:14] loaded straight to GPU
+[2024-03-27 22:14] Requested to load BaseModel
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] Requested to load SD1ClipModel
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Requested to load AutoencoderKL
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 14.86it/s]
+[2024-03-27 22:14] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:14] Comfy-VFI: Done cache clearing
+[2024-03-27 22:14] Prompt executed in 5.20 seconds
+[2024-03-27 22:14] got prompt
+[2024-03-27 22:14] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:14] Comfy-VFI: Done cache clearing
+[2024-03-27 22:14] Prompt executed in 3.17 seconds
+[2024-03-27 22:14] got prompt
+[2024-03-27 22:14] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] Prompt executed in 2.77 seconds
+[2024-03-27 22:14] got prompt
+[2024-03-27 22:14] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] model_type EPS
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:14] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:14] loaded straight to GPU
+[2024-03-27 22:14] Requested to load BaseModel
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] Requested to load SD1ClipModel
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Requested to load AutoencoderKL
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 25.00it/s]
+[2024-03-27 22:14] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:14] Comfy-VFI: Done cache clearing
+[2024-03-27 22:14] Prompt executed in 5.08 seconds
+[2024-03-27 22:14] got prompt
+[2024-03-27 22:14] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:14] Comfy-VFI: Done cache clearing
+[2024-03-27 22:14] Prompt executed in 3.11 seconds
+[2024-03-27 22:14] got prompt
+[2024-03-27 22:14] [32m[rgthree] Using rgthree's optimized recursive execution.[0m
+[2024-03-27 22:14] model_type EPS
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Missing VAE keys ['encoder.mid.attn_1.q.weight', 'encoder.mid.attn_1.q.bias', 'encoder.mid.attn_1.k.weight', 'encoder.mid.attn_1.k.bias', 'encoder.mid.attn_1.v.weight', 'encoder.mid.attn_1.v.bias', 'encoder.mid.attn_1.proj_out.weight', 'encoder.mid.attn_1.proj_out.bias', 'decoder.mid.attn_1.q.weight', 'decoder.mid.attn_1.q.bias', 'decoder.mid.attn_1.k.weight', 'decoder.mid.attn_1.k.bias', 'decoder.mid.attn_1.v.weight', 'decoder.mid.attn_1.v.bias', 'decoder.mid.attn_1.proj_out.weight', 'decoder.mid.attn_1.proj_out.bias']
+[2024-03-27 22:14] clip missing: ['clip_l.logit_scale', 'clip_l.transformer.text_projection.weight']
+[2024-03-27 22:14] loaded straight to GPU
+[2024-03-27 22:14] Requested to load BaseModel
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] Requested to load SD1ClipModel
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Using pytorch attention in VAE
+[2024-03-27 22:14] Requested to load AutoencoderKL
+[2024-03-27 22:14] Loading 1 new model
+[2024-03-27 22:14] 100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 27.22it/s]
+[2024-03-27 22:14] 
+Stopped server
+[2024-03-27 22:14] Comfy-VFI: Final clearing cache...
+[2024-03-27 22:14] Comfy-VFI: Done cache clearing
+[2024-03-27 22:14] Traceback (most recent call last):
+[2024-03-27 22:14]   File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\main.py", line 257, in <module>
+[2024-03-27 22:14]     cleanup_temp()
+[2024-03-27 22:14]   File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\main.py", line 165, in cleanup_temp
+[2024-03-27 22:14]     shutil.rmtree(temp_dir, ignore_errors=True)
+[2024-03-27 22:14]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\shutil.py", line 739, in rmtree
+[2024-03-27 22:14]     return _rmtree_unsafe(path, onerror)
+[2024-03-27 22:14]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\shutil.py", line 615, in _rmtree_unsafe
+[2024-03-27 22:14]     os.unlink(fullname)
+[2024-03-27 22:14] KeyboardInterrupt
