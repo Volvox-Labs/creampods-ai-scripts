@@ -114,9 +114,9 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
     scheduler = parameters.schedulers[random.randint(0, len(parameters.schedulers)-1)]
     # print(f"scheduler-{scheduler}")
     json_image_animate["29"]["inputs"]["scheduler"] = scheduler
-    denoise_idx = random.randint(2, 4)
-    denoise = .2 + (denoise_idx * .2)
-    denoise = .4
+    denoise_vals = [.2, .3, .4, .5, .6]
+    denoise_idx = random.randint(0, 4)
+    denoise = denoise_vals[denoise_idx]
     # print(f"denoise-{denoise}\n\n")
     json_image_animate["29"]["inputs"]["denoise"] = denoise
     # hold_for_frames_idx = random.randint(1, 3)
