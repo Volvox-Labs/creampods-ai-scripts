@@ -201,6 +201,30 @@ def trained_models_api(model, hold_for_frames, keyframes):
 
 
 
+
+
+
+# -------------------------------------------------------------------------------------
+#
+#                         COMFYUI - HELPER FUNCTIONS 
+#
+#--------------------------------------------------------------------------------------
+
+
+
+def clear_folder(folder):
+    import shutil
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+
 def queue_prompt(prompt):
     p = {"prompt": prompt, "client_id": client_id}
     # stringify client id and workflow json
@@ -224,15 +248,11 @@ def get_images(ws, prompt):
     while True:
         out = ws.recv()
         if isinstance(out, str):
-            print("executing ?")
             message = json.loads(out)
-            print(message)
             if message['type'] == 'executing':
-                print("executing ??")
                 data = message['data']
-                print(data['node'])
                 if data['node'] is None and data['prompt_id'] == prompt_id:
-                    print("execution is done.")
+                    # print("execution is done.")
                     break #Execution is done
         else:
             continue #previews are binary data
@@ -278,17 +298,7 @@ def save_images(images, folder, type, x):
             image.save(image_path + file_name)
     return file_name
 
-def clear_folder(folder):
-    import shutil
-    for filename in os.listdir(folder):
-        file_path = os.path.join(folder, filename)
-        try:
-            if os.path.isfile(file_path) or os.path.islink(file_path):
-                os.unlink(file_path)
-            elif os.path.isdir(file_path):
-                shutil.rmtree(file_path)
-        except Exception as e:
-            print('Failed to delete %s. Reason: %s' % (file_path, e))
+
 
 
 
@@ -315,8 +325,7 @@ def save_video(video_name, image_folder):
     clip.write_videofile(video_name+'.mp4')
 
 
-
-# clear folder before run
+    # clear folder before run
 clear_folder(BASE_DIR+"/all_frames")
 simple_interpolate_macros_api()
 # calabash_model_api()

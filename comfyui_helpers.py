@@ -8,6 +8,7 @@ import urllib.parse
 import random
 import os
 import moviepy.video.io.ImageSequenceClip
+# //ffmpeg
 
 server_address = "127.0.0.1:8188"
 client_id = str(uuid.uuid4())
@@ -36,15 +37,11 @@ def get_images(ws, prompt):
     while True:
         out = ws.recv()
         if isinstance(out, str):
-            print("executing ?")
             message = json.loads(out)
-            print(message)
             if message['type'] == 'executing':
-                print("executing ??")
                 data = message['data']
-                print(data['node'])
                 if data['node'] is None and data['prompt_id'] == prompt_id:
-                    print("execution is done.")
+                    # print("execution is done.")
                     break #Execution is done
         else:
             continue #previews are binary data
