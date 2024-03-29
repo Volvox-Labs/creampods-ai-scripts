@@ -36,11 +36,15 @@ def get_images(ws, prompt):
     while True:
         out = ws.recv()
         if isinstance(out, str):
+            print("executing ?")
             message = json.loads(out)
+            print(message)
             if message['type'] == 'executing':
+                print("executing ??")
                 data = message['data']
+                print(data['node'])
                 if data['node'] is None and data['prompt_id'] == prompt_id:
-                    # print("execution is done.")
+                    print("execution is done.")
                     break #Execution is done
         else:
             continue #previews are binary data
