@@ -1,0 +1,47 @@
+{
+  "9": {
+    "inputs": {
+      "directory": "C:\\Users\\mkski\\ComfyUI_windows_portable_nvidia_cu121_or_cpu\\ComfyUI_windows_portable\\ComfyUI\\script_examples\\birme-512x288\\birme-512x288",
+      "image_load_cap": 0,
+      "skip_first_images": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadImagesPath",
+    "_meta": {
+      "title": "Load Images (Path) 1"
+    }
+  },
+  "13": {
+    "inputs": {
+      "image1": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "Make Image Batch",
+    "_meta": {
+      "title": "Make Image Batch"
+    }
+  },
+  "14": {
+    "inputs": {
+      "frame_rate": 8,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h265-mp4",
+      "pix_fmt": "yuv420p10le",
+      "crf": 22,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  }
+}

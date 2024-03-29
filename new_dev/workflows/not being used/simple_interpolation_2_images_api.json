@@ -1,0 +1,65 @@
+{
+  "2": {
+    "inputs": {
+      "ckpt_name": "film_net_fp32.pt",
+      "clear_cache_after_n_frames": 10,
+      "multiplier": 8,
+      "frames": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "FILM VFI",
+    "_meta": {
+      "title": "FILM VFI"
+    }
+  },
+  "6": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "image": "_DSF6225.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load_Image_1"
+    }
+  },
+  "27": {
+    "inputs": {
+      "image": "_DSF6222.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load_Image_2"
+    }
+  },
+  "28": {
+    "inputs": {
+      "image1": [
+        "26",
+        0
+      ],
+      "image2": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "Make Image Batch",
+    "_meta": {
+      "title": "Make Image Batch"
+    }
+  }
+}

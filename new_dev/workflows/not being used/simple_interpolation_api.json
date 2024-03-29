@@ -1,0 +1,74 @@
+{
+  "1": {
+    "inputs": {
+      "directory": ".\\input\\birme-512x288\\birme-512x288",
+      "image_load_cap": 0,
+      "skip_first_images": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadImagesPath",
+    "_meta": {
+      "title": "Load Images (Path) 🎥🅥🅗🅢"
+    }
+  },
+  "2": {
+    "inputs": {
+      "ckpt_name": "film_net_fp32.pt",
+      "clear_cache_after_n_frames": 10,
+      "multiplier": 2,
+      "frames": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "FILM VFI",
+    "_meta": {
+      "title": "FILM VFI"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "frame_rate": 8,
+      "loop_count": 0,
+      "filename_prefix": "AnimateDiff",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine 🎥🅥🅗🅢"
+    }
+  },
+  "6": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

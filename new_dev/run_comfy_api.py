@@ -1,6 +1,6 @@
 #This is an example that uses the websockets api to know when a prompt execution is done
 #Once the prompt execution is done it downloads the images using the /history endpoint
-[]
+
 import websocket #NOTE: websocket-client (https://github.com/websocket-client/websocket-client)
 import uuid
 import json
@@ -10,6 +10,7 @@ import random
 import os
 import moviepy.video.io.ImageSequenceClip
 import parameters
+import cv2
 # import comfyui_helpers
 from os import listdir
 from os.path import isfile, join
@@ -22,7 +23,6 @@ from os.path import isfile, join
 server_address = "127.0.0.1:8188"
 client_id = str(uuid.uuid4())
 BASE_DIR = os. getcwd() 
-img_count = 0
 
 # onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
@@ -39,14 +39,13 @@ img_count = 0
 # keyframes - number of keyframes (pre-interpolation) > keyframes = more output
 # source_dir - where images are being queried from
 # hold_for_frames - how long to pause between morphing 
-# denoise - (.2 - .6) determines how much macros are merged with calabashes, highier value -> more calabash is incorporated between keyframes
+# denoise - (.4 - .8) determines how much macros are merged with calabashes, highier value -> greater calabash noise
 
 
-def simple_interpolate_macros_api(keyframes=2, src_dir="macros", hold_for_frames=12, denoise=.6):
+def simple_interpolate_macros_api(keyframes=4, src_dir="macros", hold_for_frames=16, denoise=.6):
     pause_interpolate(keyframes, src_dir, hold_for_frames, denoise)
 
-def calabash_model_api(keyframes=3, model="", hold_for_frames=8):
-    print("calabash api!")
+def calabash_model_api(keyframes=2, model="", hold_for_frames=8):
     trained_models_api(keyframes, model, hold_for_frames)
 # def trained_models_api(keyframes, model):
     # 1. generate key frames, interpolate, upscale, prompt pos, prompt neg
@@ -114,9 +113,8 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
     scheduler = parameters.schedulers[random.randint(0, len(parameters.schedulers)-1)]
     # print(f"scheduler-{scheduler}")
     json_image_animate["29"]["inputs"]["scheduler"] = scheduler
-    denoise_idx = random.randint(2, 4)
+    denoise_idx = random.randint(2, 3)
     denoise = .2 + (denoise_idx * .2)
-    denoise = .4
     # print(f"denoise-{denoise}\n\n")
     json_image_animate["29"]["inputs"]["denoise"] = denoise
     # hold_for_frames_idx = random.randint(1, 3)
@@ -166,11 +164,11 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
     # save video to output directory
     # COMMENT OUT TO SAVE SPACE ON DRIVE ****************
     print(f"saving {file_prefix}")
+    save_video(file_prefix, BASE_DIR+"\\all_frames")
     # images = get_images(ws, json_combine_frames) 
 
-    save_video(file_prefix, BASE_DIR + "/all_frames")
 
-# -------------------------------------------------------------------------------------
+# -------------------------------------------------------------------f------------------
 #
 #                          CREATE WITH CALABASH TRAINED MODELS
 #
@@ -179,27 +177,63 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
 
 def trained_models_api(model, hold_for_frames, keyframes):
     print("use model to generate frames")
+        # load comfy workflows
+    with open("workflows/simple_interpolation_load_from_path_api.json", "r", encoding="utf-8") as f:
+        simple_interpolation = f.read()
+
+    json_simple_interpolation = json.loads(simple_interpolation)
+
 
     # load comfy workflows
     with open("workflows/specialized_model_api.json", "r", encoding="utf-8") as f:
         special_model = f.read()
-    print("opened_json")
     json_special_model = json.loads(special_model)
-    print("load Json")
-    # json_special_model['4']['inputs']['ckpt_name'] = "SD1.5\\cccb.safetensors"
+    json_special_model['4']['inputs']['ckpt_name'] = "SD1.5\\cccb.safetensors"
     # # positive prompt
-    # json_special_model['6']['inputs']['text'] = "photo of a cccb calabash, texture in background, organic, imperfect, dry"
+    json_special_model['6']['inputs']['text'] = "photo of a cccb calabash, texture in background, organic, imperfect, dry"
     # # negative prompt
-    # json_special_model['7']['inputs']['text'] = "text, watermark, ugly, rotting, white background, cgi, people, fake, colorful"
+    json_special_model['7']['inputs']['text'] = "text, watermark, ugly, rotting, white background, cgi, people, fake, colorful"
     lastKeyFrame=""
     
-    for x in range(1):
-        print('in loop')
+    for x in range(3):
+        seed = random.randint(0,100000000)
+        json_special_model['3']['inputs']['seed'] = seed
         images = get_images(ws, json_special_model)
-        print('called model')
+        # print('called model')
         last_img = save_images(images, "all_frames", 1, x)
         print(str(x))
-        lastKeyFrame = last_img
+        # lastKeyFrame = last_img
+        # previousFrame = BASE_DIR + "/all_frames/" + last_img
+        if(x==0):
+            continue
+        else: 
+            print("")
+
+            # interpolate between this and last Frame
+            # images = get_images(ws, json_simple_interpolation)
+            # json_simple_interpolation["33"]["inputs"]["image"] = BASE_DIR + "\\all_frames\\" + last_img
+            # lastKeyFrame = filename
+            # json_simple_interpolation["34"]["inputs"]["image"] = BASE_DIR + source_dir_ + filename
+
+
+# def simple_interpolation()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -272,12 +306,13 @@ def get_images(ws, prompt):
 
     return output_images
 
-def create_file_name(image_path, count):
-
-    cstr = str(count)
-    extra_zeros = 5 - len(cstr)
-    return ("0" * extra_zeros) + cstr +  '.png'
-
+def create_file_name(image_path, type, x, count):
+    if(type == 3):
+        cstr = str(count)
+        extra_zeros = 5 - len(cstr)
+        return ("0" * extra_zeros) + cstr +  '.png'
+    else:
+        return str(x) + "-" + str(type) + "-" + str(count) + '.png'
 
 def save_images(images, folder, type, x):
     count = 0
@@ -288,16 +323,14 @@ def save_images(images, folder, type, x):
             from PIL import Image
             import io
             image_path = "./"+ folder +"/"
-            global img_count 
             if(not os.path.isdir(folder)):
                 os.mkdir(image_path)
             # output will still save if save is configured in confy ui workflow 
             # would be better to save here to have control over how ouput is saved
-            file_name = create_file_name(image_path, img_count) 
+            file_name = create_file_name(image_path,type,x,count) 
             count += 1
-            img_count += 1
             image = Image.open(io.BytesIO(image_data))
-            print(file_name)
+            # print(file_name)
             image.save(image_path + file_name)
     return file_name
 
@@ -312,23 +345,29 @@ def get_random_file(path):
     return files[filenum]
 
 def save_video(video_name, image_folder):
-    fps=12
-    dirFiles = os.listdir(image_folder)
-    dirFiles.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
-    for img in os.listdir(image_folder):
-        print(img)
-
-    image_files = [os.path.join(image_folder,img)
-                for img in os.listdir(image_folder)
-                if img.endswith(".png")]
-
-    
-    os.chdir(BASE_DIR + "/output")
-    clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(image_files, fps=fps)
-    clip.write_videofile(video_name+'.mp4')
+    try: 
+        video_name = video_name + ".mp4"
+        outputdir = BASE_DIR+"/output"
+        os.system(f"ffmpeg -r 8 -i {image_folder}/%05d.png -vcodec mpeg4 -y {outputdir}/{video_name}")
+        print("Finished writing {}".format(video_name))
+    except:
+        print("video processing went wrong :(")
 
 
-    # clear folder before run
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # clear folder before run
 clear_folder(BASE_DIR+"/all_frames")
 simple_interpolate_macros_api()
 # calabash_model_api()
