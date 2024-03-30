@@ -25,14 +25,16 @@ denoise_vals = [.2, .3, .4, .5, .6]
 denoise_idx = random.randint(0, 4)
 denoise = denoise_vals[denoise_idx]
 
+def get_random_model():
+    model_idx = random.randint(0,len(parameters.models)-1)
+    return parameters.models[model_idx]
 
 for x in range(TOTAL_RUNS):
     print("\n"+str(x) + " run\n")
-    model_idx = random.randint(0,len(parameters.models)-1)
-    model = parameters.models[model_idx]
+    model = get_random_model()
     circle_true = random.randint(0,1) 
-    # run_comfy_api.simple_interpolate_api(keyframes=10, src_dir="calabash", hold_for_frames=6, denoise=.6)
-    run_comfy_api.calabash_model_api(keyframes=10, model=model, hold_for_frames=12, circle=circle_true)
+    run_comfy_api.simple_interpolate_api(keyframes=10, src_dir="calabash", hold_for_frames=6, denoise=.6)
+    # run_comfy_api.calabash_model_api(keyframes=10, model=model, hold_for_frames=12, circle=circle_true)
 
 # run_comfy_api.calabash_model_api(keyframes=6, model=model, hold_for_frames=6, circle=circle_true)
     
