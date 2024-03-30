@@ -2,9 +2,9 @@
   "3": {
     "inputs": {
       "seed": 89,
-      "steps": 50,
+      "steps": 20,
       "cfg": 8,
-      "sampler_name": "euler",
+      "sampler_name": "heun",
       "scheduler": "normal",
       "denoise": 1,
       "model": [

@@ -1,6 +1,6 @@
 #This is an example that uses the websockets api to know when a prompt execution is done
 #Once the prompt execution is done it downloads the images using the /history endpoint
-
+[]
 import websocket #NOTE: websocket-client (https://github.com/websocket-client/websocket-client)
 import uuid
 import json
@@ -10,7 +10,6 @@ import random
 import os
 import moviepy.video.io.ImageSequenceClip
 import parameters
-import cv2
 # import comfyui_helpers
 from os import listdir
 from os.path import isfile, join
@@ -23,6 +22,7 @@ from os.path import isfile, join
 server_address = "127.0.0.1:8188"
 client_id = str(uuid.uuid4())
 BASE_DIR = os. getcwd() 
+img_count = 0
 
 # onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 
@@ -39,14 +39,21 @@ BASE_DIR = os. getcwd()
 # keyframes - number of keyframes (pre-interpolation) > keyframes = more output
 # source_dir - where images are being queried from
 # hold_for_frames - how long to pause between morphing 
-# denoise - (.4 - .8) determines how much macros are merged with calabashes, highier value -> greater calabash noise
+# denoise - (.2 - .6) determines how much macros are merged with calabashes, highier value -> more calabash is incorporated between keyframes
 
 
-def simple_interpolate_macros_api(keyframes=4, src_dir="macros", hold_for_frames=16, denoise=.6):
+def simple_interpolate_macros_api(keyframes=2, src_dir="macros", hold_for_frames=12, denoise=.6):
     pause_interpolate(keyframes, src_dir, hold_for_frames, denoise)
 
-def calabash_model_api(keyframes=2, model="", hold_for_frames=8):
-    trained_models_api(keyframes, model, hold_for_frames)
+
+# keyframes - number of keyframes (pre-interpolation) > keyframes = more output
+# source_dir - where images are being queried from
+# hold_for_frames - how long to pause between morphing 
+# denoise - (.2 - .6) determines how much macros are merged with calabashes, highier value -> more calabash is incorporated between keyframes
+
+def calabash_model_api(keyframes=3, model="", hold_for_frames=6):
+    print("calabash api!")
+    trained_models_api(keyframes, model, hold_for_frames, circle=True)
 # def trained_models_api(keyframes, model):
     # 1. generate key frames, interpolate, upscale, prompt pos, prompt neg
 
@@ -113,8 +120,9 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
     scheduler = parameters.schedulers[random.randint(0, len(parameters.schedulers)-1)]
     # print(f"scheduler-{scheduler}")
     json_image_animate["29"]["inputs"]["scheduler"] = scheduler
-    denoise_idx = random.randint(2, 3)
-    denoise = .2 + (denoise_idx * .2)
+    denoise_vals = [.2, .3, .4, .5, .6]
+    denoise_idx = random.randint(0, 4)
+    denoise = denoise_vals[denoise_idx]
     # print(f"denoise-{denoise}\n\n")
     json_image_animate["29"]["inputs"]["denoise"] = denoise
     # hold_for_frames_idx = random.randint(1, 3)
@@ -140,7 +148,7 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
 
         json_image_animate["26"]["inputs"]["image"] = BASE_DIR + source_dir_ + filename
         images = get_images(ws, json_image_animate)
-        last_img = save_images(images, "all_frames", 1, x)
+        last_img = save_images(images, "all_frames")
 
         # part 2 interpolation 
 
@@ -149,8 +157,7 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
         lastKeyFrame = filename
         json_simple_interpolation["34"]["inputs"]["image"] = BASE_DIR + source_dir_ + filename
         images = get_images(ws, json_simple_interpolation)
-        # save_images(images, "simple_interp")
-        save_images(images,"all_frames", 2, x)
+        save_images(images,"all_frames")
 
     
     # part 3 upscaling 
@@ -159,84 +166,125 @@ def pause_interpolate(keyframes, source_dir, hold_for_frames, denoise):
     images = get_images(ws, json_upscale_frames)
 
     clear_folder(BASE_DIR+"\\all_frames")
-    save_images(images, "all_frames", 3, 0)
+    save_images(images, "all_frames")
 
     # save video to output directory
     # COMMENT OUT TO SAVE SPACE ON DRIVE ****************
     print(f"saving {file_prefix}")
-    save_video(file_prefix, BASE_DIR+"\\all_frames")
     # images = get_images(ws, json_combine_frames) 
 
+    save_video(file_prefix, BASE_DIR + "/all_frames")
 
-# -------------------------------------------------------------------f------------------
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------
 #
 #                          CREATE WITH CALABASH TRAINED MODELS
 #
 #--------------------------------------------------------------------------------------
 
 
-def trained_models_api(model, hold_for_frames, keyframes):
+def trained_models_api(model, hold_for_frames, keyframes, circle):
     print("use model to generate frames")
-        # load comfy workflows
-    with open("workflows/simple_interpolation_load_from_path_api.json", "r", encoding="utf-8") as f:
-        simple_interpolation = f.read()
-
-    json_simple_interpolation = json.loads(simple_interpolation)
-
+    hold_for_frames = 12
 
     # load comfy workflows
     with open("workflows/specialized_model_api.json", "r", encoding="utf-8") as f:
         special_model = f.read()
+                # load comfy workflows
+    with open("workflows/simple_interpolation_load_from_path_api.json", "r", encoding="utf-8") as f:
+        simple_interpolation = f.read()
+        
+    with open("workflows/upscale_api.json", "r", encoding="utf-8") as f:
+        upscale_frames = f.read()
+
+            # load comfy workflows
+    with open("workflows/circle_calabash_api.json", "r", encoding="utf-8") as f:
+        circle_special_model = f.read()
+
+
+    json_upscale_frames = json.loads(upscale_frames)
+    json_circle_special_model = json.loads(circle_special_model)
     json_special_model = json.loads(special_model)
-    json_special_model['4']['inputs']['ckpt_name'] = "SD1.5\\cccb.safetensors"
-    # # positive prompt
-    json_special_model['6']['inputs']['text'] = "photo of a cccb calabash, texture in background, organic, imperfect, dry"
-    # # negative prompt
-    json_special_model['7']['inputs']['text'] = "text, watermark, ugly, rotting, white background, cgi, people, fake, colorful"
+    json_simple_interpolation = json.loads(simple_interpolation)
+
+    # model = "SD1.5\\cccb_burn_400.safetensors"
+    # model =  "SD1.5\\calabash_aerial.safetensors"
+    # model = "SD1.5\\cccb.safetensors"
+    # model = "SD1.5\\calabash2-200-realistic.safetensors"
+    model_idx = random.randint(0,3)
+    print("model idx: " + str(model_idx))
+    model = parameters.models[model_idx]
+    print("model: " + model)
+
+
+    # json_special_model['4']['inputs']['ckpt_name'] = "SD1.5\\cccb.safetensors"
+    # json_special_model['4']['inputs']['ckpt_name'] = "SD1.5\\calabash_aerial.safetensors"
+    json_special_model['4']['inputs']['ckpt_name'] = model 
+    # positive prompt
+    # json_special_model['6']['inputs']['text'] = "photo of a cccb"f
+
+    json_special_model['6']['inputs']['text'] = parameters.model_pos_prompts[model]
+
+    # negative prompt
+    json_special_model['7']['inputs']['text'] = parameters.model_neg_prompts[model]
     lastKeyFrame=""
+    from datetime import datetime
     
-    for x in range(3):
-        seed = random.randint(0,100000000)
+    for x in range(keyframes):
+        print("datetime: " + str(round(datetime.now().timestamp()*10000)))
+        seed =  round(datetime.now().timestamp()*1000)
         json_special_model['3']['inputs']['seed'] = seed
-        images = get_images(ws, json_special_model)
-        # print('called model')
-        last_img = save_images(images, "all_frames", 1, x)
-        print(str(x))
-        # lastKeyFrame = last_img
-        # previousFrame = BASE_DIR + "/all_frames/" + last_img
-        if(x==0):
-            continue
+        json_circle_special_model['21']['inputs']['seed'] = seed
+        if(model == "SD1.5\\cccb_burn_400.safetensors" or model ==  
+                    "SD1.5\\calabash_aerial.safetensors" or 
+                    "SD1.5\\calabash2-200-realistic.safetensors"):
+            json_circle_special_model['18']['inputs']['ckpt_name'] = model
+            if(not model == "SD1.5\\cccb_burn_400.safetensors" ):
+                json_circle_special_model["19"]["inputs"]["text"] = parameters.model_pos_prompts[model]
+                json_circle_special_model["20"]["inputs"]["text"] = parameters.model_neg_prompts[model]
+            images = get_images(ws, json_circle_special_model)
         else: 
-            print("")
+            images = get_images(ws, json_special_model)
+        save_images(images,  "all_frames")
+        print("seed: " + str(seed))
+        print("hold for frames: " + str(hold_for_frames))
+    global img_count
+    img_count = 0
 
-            # interpolate between this and last Frame
-            # images = get_images(ws, json_simple_interpolation)
-            # json_simple_interpolation["33"]["inputs"]["image"] = BASE_DIR + "\\all_frames\\" + last_img
-            # lastKeyFrame = filename
-            # json_simple_interpolation["34"]["inputs"]["image"] = BASE_DIR + source_dir_ + filename
-
-
-# def simple_interpolation()
-
-
-
-
-
-
-
-
-
+    # testing above
+    interpolate_between_frames(BASE_DIR + "\\all_frames\\", hold_for_frames, json_simple_interpolation)
+    print("upscaling frames")
+    json_upscale_frames["13"]["inputs"]["directory"] = BASE_DIR + "\\special_models"
+    images = get_images(ws, json_upscale_frames)
+    clear_folder(BASE_DIR+"\\special_models")
+    save_images(images, "special_models")
+    # duplicate_every_nth_frame(BASE_DIR+"\\special_models")
+    file_prefix = str(seed)
+    save_video(file_prefix, BASE_DIR + "/special_models")
 
 
 
-
-
-
-
-
-
-
-
+def interpolate_between_frames(path, frames, wf):
+    count = 0
+    print("interpolate between")
+    for filename in os.listdir(path):
+        if(count==0):
+            previous = filename
+            count =  count + 1
+            continue
+        this = filename
+        wf["33"]["inputs"]["image"] = path + previous
+        wf["34"]["inputs"]["image"] = path + this
+        wf["2"]["inputs"]["multiplier"] = frames
+        images = get_images(ws, wf)
+        save_images(images, "special_models")
+        count =  count + 1
+        previous = this
 
 
 
@@ -306,15 +354,14 @@ def get_images(ws, prompt):
 
     return output_images
 
-def create_file_name(image_path, type, x, count):
-    if(type == 3):
-        cstr = str(count)
-        extra_zeros = 5 - len(cstr)
-        return ("0" * extra_zeros) + cstr +  '.png'
-    else:
-        return str(x) + "-" + str(type) + "-" + str(count) + '.png'
+def create_file_name(image_path, count):
 
-def save_images(images, folder, type, x):
+    cstr = str(count)
+    extra_zeros = 5 - len(cstr)
+    return ("0" * extra_zeros) + cstr +  '.png'
+
+
+def save_images(images, folder):
     count = 0
     file_name = ""
     for node_id in images:
@@ -323,14 +370,15 @@ def save_images(images, folder, type, x):
             from PIL import Image
             import io
             image_path = "./"+ folder +"/"
+            global img_count 
             if(not os.path.isdir(folder)):
                 os.mkdir(image_path)
             # output will still save if save is configured in confy ui workflow 
             # would be better to save here to have control over how ouput is saved
-            file_name = create_file_name(image_path,type,x,count) 
+            file_name = create_file_name(image_path, img_count) 
             count += 1
+            img_count += 1
             image = Image.open(io.BytesIO(image_data))
-            # print(file_name)
             image.save(image_path + file_name)
     return file_name
 
@@ -345,29 +393,24 @@ def get_random_file(path):
     return files[filenum]
 
 def save_video(video_name, image_folder):
-    try: 
-        video_name = video_name + ".mp4"
-        outputdir = BASE_DIR+"/output"
-        os.system(f"ffmpeg -r 8 -i {image_folder}/%05d.png -vcodec mpeg4 -y {outputdir}/{video_name}")
-        print("Finished writing {}".format(video_name))
-    except:
-        print("video processing went wrong :(")
+    fps=12
+    dirFiles = os.listdir(image_folder)
+    dirFiles.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
+    for img in os.listdir(image_folder):
+        print(img)
+
+    image_files = [os.path.join(image_folder,img)
+                for img in os.listdir(image_folder)
+                if img.endswith(".png")]
+
+    
+    os.chdir(BASE_DIR + "/output")
+    clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(image_files, fps=fps)
+    clip.write_videofile(video_name+'.mp4')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # clear folder before run
+    # clear folder before run
 clear_folder(BASE_DIR+"/all_frames")
-simple_interpolate_macros_api()
-# calabash_model_api()
+clear_folder(BASE_DIR+"\\special_models")
+# simple_interpolate_macros_api()
+calabash_model_api()

@@ -1,3 +1,5 @@
+
+
 @ECHO OFF
 ECHO Starting up batch testing...
 
