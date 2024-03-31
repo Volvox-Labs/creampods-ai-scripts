@@ -15,7 +15,7 @@ SAVE_GEN_IMAGES = False
 
 
 # negative prompting for all calabash generations 
-BASE_NEG_PROMPT = "cartoon, anime, 3d, painting, b&w, pottery, colorful, fake, bright, blue, bowl, grass, text, "
+BASE_NEG_PROMPT = "vase, clay, cartoon, anime, painting, b&w, pottery, colorful, fake, bright, bowl, grass, text, "
 
 
 # models that are trained on subsets of the calabash dataset, each has their own style
@@ -30,10 +30,10 @@ models =[
 # Positive prompting specific to each trained model, can tinker with these if you want to create variation in output but be wary, they can greatly change the 
 # output so test before commiting
 model_pos_prompts = {
-    "SD1.5\\calabash_aerial.safetensors": "xyz calabash, hight quality, side lighting, closeups, circle, organic, gourd, imperfect",
+    "SD1.5\\calabash_aerial.safetensors": "xyz calabash, high quality, side lighting, closeups, circle, organic, gourd, imperfect",
     "SD1.5\\cccb_burn_400.safetensors" : "photo of cccb, circle, high quality",   # add calabash?
     "SD1.5\\cccb.safetensors": "photo of a cccb calabash, textured background", # can take out textured background for closer to original look
-    "SD1.5\\calabash2-200-realistic.safetensors" : "xyz calabash, organic, squash"
+    "SD1.5\\calabash2-200-realistic.safetensors" : "xyz calabash, organic, squash, high quality, photo-realistic"
 }
 
 model_neg_prompts = {

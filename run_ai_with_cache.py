@@ -9,7 +9,7 @@ import os
 BASE_DIR = os. getcwd() 
 ALL_FRAMES_PATH = BASE_DIR+"\\all_frames\\"
 GEN_IMAGES_PATH = BASE_DIR+"\\generated_images\\"
-
+src_dir_names = ["calabash", "macros"]
 
 def clear_folder(folder):
     import shutil
@@ -58,10 +58,12 @@ for x in range(TOTAL_RUNS):
     # example of API call to simple interpolate. This name is deceiving (sorry :(), there is a custom model used in this 
     # api that generates new calabash forms between frames randomly selected from the src_dir. The highier the denoise value
     # the more the model is used and the input images are changed.
-    if(random.randint(0,1)):
-        run_comfy_api.simple_interpolate_api(keyframes=10, src_dir="calabash", hold_for_frames=6, denoise=denoise)
-    else:
-        run_comfy_api.calabash_model_api(keyframes=5, model=model, hold_for_frames=12, circle=circle_true)
+    for x in range(3):
+        src_dir=src_dir_names[random.randint(0,1)]
+        if(random.randint(0,9) > 6):
+            run_comfy_api.simple_interpolate_api(keyframes=10, src_dir=src_dir, hold_for_frames=6, denoise=denoise)
+        else:
+            run_comfy_api.calabash_model_api(keyframes=5, model=model, hold_for_frames=12, circle=circle_true)
 
     #Sometimes we want to clear the cache to change up the results 
     #clear_folder(ALL_FRAMES_PATH)

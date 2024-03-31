@@ -350,7 +350,7 @@ def save_images(images, folder, save_for_later):
             image.save(image_path + file_name)
             gen_img_name = file_name
             if(parameters.SAVE_GEN_IMAGES and save_for_later):
-                if(parameters.CACHE):
+                if(parameters.STORE_ALL_GEN_IMAGES):
                     gen_img_name = str(round(datetime.now().timestamp()*1000)) +'.png' 
                 image.save(GEN_IMAGES_PATH + gen_img_name)
     return file_name
