@@ -33,7 +33,7 @@ model_pos_prompts = {
     "SD1.5\\calabash_aerial.safetensors": "xyz calabash, high quality, side lighting, closeups, circle, organic, gourd, imperfect",
     "SD1.5\\cccb_burn_400.safetensors" : "photo of cccb, circle, high quality",   # add calabash?
     "SD1.5\\cccb.safetensors": "photo of a cccb calabash, textured background", # can take out textured background for closer to original look
-    "SD1.5\\calabash2-200-realistic.safetensors" : "xyz calabash, organic, squash, high quality, photo-realistic"
+    "SD1.5\\calabash2-200-realistic.safetensors" : "xyz calabash, circle, organic, squash, high quality, photo-realistic"
 }
 
 model_neg_prompts = {

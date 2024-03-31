@@ -61,16 +61,16 @@ for x in range(TOTAL_RUNS):
     for x in range(3):
         src_dir=src_dir_names[random.randint(0,1)]
         if(random.randint(0,9) > 6):
-            run_comfy_api.simple_interpolate_api(keyframes=10, src_dir=src_dir, hold_for_frames=6, denoise=denoise)
+            run_comfy_api.simple_interpolate_api(keyframes=2, src_dir=src_dir, hold_for_frames=2, denoise=denoise)
         else:
-            run_comfy_api.calabash_model_api(keyframes=5, model=model, hold_for_frames=12, circle=circle_true)
+            run_comfy_api.calabash_model_api(keyframes=10, model=model, hold_for_frames=12, circle=circle_true)
 
     #Sometimes we want to clear the cache to change up the results 
     #clear_folder(ALL_FRAMES_PATH)
     for y in range(10):
         parameters.USE_GEN_IMAGES = True
         parameters.SAVE_GEN_IMAGES = random.randint(0,1)
-        run_comfy_api.simple_interpolate_api(keyframes=10, src_dir="calabash", hold_for_frames=6, denoise=denoise)
+        run_comfy_api.simple_interpolate_api(keyframes=10, src_dir="calabash", hold_for_frames=12, denoise=denoise)
     
     if(random.randint(0,1)):
         clear_folder(GEN_IMAGES_PATH)
