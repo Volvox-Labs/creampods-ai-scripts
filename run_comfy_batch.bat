@@ -20,7 +20,7 @@ set runi=1
 :loop
 @REM test_iteration = (num_times_to_execute - countfiles) + 1
 ECHO Running render %runi% / %total_runs% 
-START /B /wait ..\..\python_embeded\python.exe run_comfy_api.py %*
+START /B /wait ..\..\python_embeded\python.exe run_ai_with_cache.py %*
 
 set /a countfiles -= 1
 set /a runi += 1

@@ -1,0 +1,178 @@
+** ComfyUI startup time: 2024-03-30 23:45:02.045512
+[2024-03-30 23:45] ** Platform: Windows
+[2024-03-30 23:45] ** Python version: 3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]
+[2024-03-30 23:45] ** Python executable: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\python_embeded\python.exe
+[2024-03-30 23:45] ** Log path: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\script_examples\comfyui.log
+[2024-03-30 23:45] Downloading SVD model: svd.safetensors...
+[2024-03-30 23:45] Downloading SVD model: svd_image_decoder.safetensors...
+[2024-03-30 23:45] Downloading SVD model: svd_xt.safetensors...
+[2024-03-30 23:45] Downloading SVD model: svd_xt_image_decoder.safetensors...
+[2024-03-30 23:45] 
+Prestartup times for custom nodes:
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\rgthree-comfy
+[2024-03-30 23:45]    0.1 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion
+[2024-03-30 23:45]    0.1 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Manager
+[2024-03-30 23:45] 
+Total VRAM 16376 MB, total RAM 32508 MB
+[2024-03-30 23:45] Set vram state to: NORMAL_VRAM
+[2024-03-30 23:45] Device: cuda:0 NVIDIA GeForce RTX 4090 Laptop GPU : cudaMallocAsync
+[2024-03-30 23:45] VAE dtype: torch.bfloat16
+[2024-03-30 23:45] Using pytorch cross attention
+[2024-03-30 23:45] Adding extra search path checkpoints path/to/stable-diffusion-webui/models/Stable-diffusion
+[2024-03-30 23:45] Adding extra search path configs path/to/stable-diffusion-webui/models/Stable-diffusion
+[2024-03-30 23:45] Adding extra search path vae path/to/stable-diffusion-webui/models/VAE
+[2024-03-30 23:45] Adding extra search path loras path/to/stable-diffusion-webui/models/Lora
+[2024-03-30 23:45] Adding extra search path loras path/to/stable-diffusion-webui/models/LyCORIS
+[2024-03-30 23:45] Adding extra search path upscale_models path/to/stable-diffusion-webui/models/ESRGAN
+[2024-03-30 23:45] Adding extra search path upscale_models path/to/stable-diffusion-webui/models/RealESRGAN
+[2024-03-30 23:45] Adding extra search path upscale_models path/to/stable-diffusion-webui/models/SwinIR
+[2024-03-30 23:45] Adding extra search path embeddings path/to/stable-diffusion-webui/embeddings
+[2024-03-30 23:45] Adding extra search path hypernetworks path/to/stable-diffusion-webui/models/hypernetworks
+[2024-03-30 23:45] Adding extra search path controlnet path/to/stable-diffusion-webui/models/ControlNet
+[2024-03-30 23:45] Adding C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes to sys.path
+[2024-03-30 23:45] [36mEfficiency Nodes:[0m Attempting to add Control Net options to the 'HiRes-Fix Script' Node (comfyui_controlnet_aux add-on)...[92mSuccess![0m
+[2024-03-30 23:45] [93mEfficiency Nodes Warning:[0m Failed to import python package 'simpleeval'; related nodes disabled.
+[2024-03-30 23:45] 
+[2024-03-30 23:45] Loaded efficiency nodes from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\efficiency-nodes-comfyui
+[2024-03-30 23:45] Loaded ControlNetPreprocessors nodes from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui_controlnet_aux
+[2024-03-30 23:45] [Errno 2] No such file or directory: 'C:\\Users\\mkski\\ComfyUI_windows_portable_nvidia_cu121_or_cpu\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-Advanced-ControlNet\\control/control.py\\__init__.py'
+[2024-03-30 23:45] Could not find AnimateDiff nodes
+[2024-03-30 23:45] Loaded IPAdapter nodes from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_IPAdapter_plus
+[2024-03-30 23:45] Loaded VideoHelperSuite from C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-VideoHelperSuite
+[2024-03-30 23:45] Traceback (most recent call last):
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\nodes.py", line 1888, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches\__init__.py", line 3, in <module>
+    from .calculate import *
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches\calculate.py", line 4, in <module>
+    from evalidate import Expr, EvalException, base_eval_model
+ModuleNotFoundError: No module named 'evalidate'
+
+[2024-03-30 23:45] Cannot import C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches module for custom nodes: No module named 'evalidate'
+[2024-03-30 23:45] ### Loading: ComfyUI-Impact-Pack (V4.85.1)
+[2024-03-30 23:45] ### Loading: ComfyUI-Impact-Pack (Subpack: V0.4)
+[2024-03-30 23:45] Traceback (most recent call last):
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\nodes.py", line 1888, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Inference-Core-Nodes\__init__.py", line 1, in <module>
+    from inference_core_nodes import NODE_CLASS_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS
+ModuleNotFoundError: No module named 'inference_core_nodes'
+
+[2024-03-30 23:45] Cannot import C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Inference-Core-Nodes module for custom nodes: No module named 'inference_core_nodes'
+[2024-03-30 23:45] [Impact Pack] Wildcards loading done.
+[2024-03-30 23:45] Injected samplers: ['k_euler', 'k_euler_a', 'k_lcm']
+[2024-03-30 23:45] ### Loading: ComfyUI-Manager (V2.10)
+[2024-03-30 23:45] ### ComfyUI Revision: 2065 [448d9263] | Released on '2024-03-14'
+[2024-03-30 23:45] ------------------------------------------
+[2024-03-30 23:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[2024-03-30 23:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[2024-03-30 23:45] [34m### N-Suite Revision:[0m [32mdbeb9ae9 [0m
+[2024-03-30 23:45] Current version of packaging: 24.0
+[2024-03-30 23:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[2024-03-30 23:45] Version of cpuinfo: Not found
+[2024-03-30 23:45] Current version of git: 3.1.42
+[2024-03-30 23:45] [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[2024-03-30 23:45] Current version of moviepy: 1.0.3
+[2024-03-30 23:45] Current version of cv2: 4.7.0
+[2024-03-30 23:45] Exception ignored in: <function _ProactorBasePipeTransport.__del__ at 0x0000020EFF1BD360>
+[2024-03-30 23:45] Traceback (most recent call last):
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\proactor_events.py", line 116, in __del__
+[2024-03-30 23:45]     self.close()
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\proactor_events.py", line 108, in close
+[2024-03-30 23:45]     self._loop.call_soon(self._call_connection_lost, None)
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\base_events.py", line 745, in call_soon
+[2024-03-30 23:45]     self._check_closed()
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\base_events.py", line 510, in _check_closed
+[2024-03-30 23:45]     raise RuntimeError('Event loop is closed')
+[2024-03-30 23:45] RuntimeError: Event loop is closed
+[2024-03-30 23:45] Current version of skbuild: 0.17.6
+[2024-03-30 23:45] Version of typing: Not found
+[2024-03-30 23:45] Current version of diskcache: 5.6.3
+[2024-03-30 23:45] Current version of llama_cpp: 0.2.26+cu121
+[2024-03-30 23:45] Current version of timm: 0.9.16
+[2024-03-30 23:45] Traceback (most recent call last):
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\nodes.py", line 1888, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion\__init__.py", line 14, in <module>
+    assert len(svd_checkpoints) > 0, "ERROR: No Stable Video Diffusion checkpoints found. Please download & place them in the ComfyUI/models/svd folder, and restart ComfyUI."
+AssertionError: ERROR: No Stable Video Diffusion checkpoints found. Please download & place them in the ComfyUI/models/svd folder, and restart ComfyUI.
+
+[2024-03-30 23:45] Cannot import C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion module for custom nodes: ERROR: No Stable Video Diffusion checkpoints found. Please download & place them in the ComfyUI/models/svd folder, and restart ComfyUI.
+[2024-03-30 23:45] ------------------------------------------
+[2024-03-30 23:45] [34mComfyroll Studio v1.76 : [92m 175 Nodes Loaded[0m
+[2024-03-30 23:45] ------------------------------------------
+[2024-03-30 23:45] ** For changes, please see patch notes at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/blob/main/Patch_Notes.md
+[2024-03-30 23:45] ** For help, please see the wiki at https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki
+[2024-03-30 23:45] ------------------------------------------
+[2024-03-30 23:45] [34mIb Custom Nodes: [92mLoaded[0m
+[2024-03-30 23:45] [92m[tinyterraNodes] [32mLoaded[0m
+[2024-03-30 23:45] [36;20m[comfy_mtb] | INFO -> loaded [96m60[0m nodes successfuly[0m
+[2024-03-30 23:45] [36;20m[comfy_mtb] | INFO -> Some nodes (7) could not be loaded. This can be ignored, but go to http://127.0.0.1:8188/mtb if you want more information.[0m
+[2024-03-30 23:45] 
+[2024-03-30 23:45] [92m[rgthree] Loaded 34 magnificent nodes.[0m
+[2024-03-30 23:45] [92m[rgthree] Will use rgthree's optimized recursive execution.[0m
+[2024-03-30 23:45] 
+[2024-03-30 23:45] [34mWAS Node Suite: [0mOpenCV Python FFMPEG support is enabled[0m
+[2024-03-30 23:45] [34mWAS Node Suite [93mWarning: [0m`ffmpeg_bin_path` is not set in `C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\was-node-suite-comfyui\was_suite_config.json` config file. Will attempt to use system ffmpeg binaries if available.[0m
+[2024-03-30 23:45] [34mWAS Node Suite: [0mFinished.[0m [32mLoaded[0m [0m211[0m [32mnodes successfully.[0m
+[2024-03-30 23:45] 
+	[3m[93m"Success is not the key to happiness. Happiness is the key to success."[0m[3m - Albert Schweitzer[0m
+[2024-03-30 23:45] 
+[2024-03-30 23:45] 
+Import times for custom nodes:
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_IPAdapter_plus
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\efficiency-nodes-comfyui
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-VideoHelperSuite
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui_controlnet_aux
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Logic
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\sdxl-recommended-res-calc
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\masquerade-nodes-comfyui
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_Ib_CustomNodes
+[2024-03-30 23:45]    0.0 seconds (IMPORT FAILED): C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Inference-Core-Nodes
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\cg-use-everywhere
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\stability-ComfyUI-nodes
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_essentials
+[2024-03-30 23:45]    0.0 seconds (IMPORT FAILED): C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Stable-Video-Diffusion
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\cg-image-picker
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Fans
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Keyframe
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyMath
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfy-image-saver
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_UltimateSDUpscale
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\steerable-motion
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Custom-Scripts
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Advanced-ControlNet
+[2024-03-30 23:45]    0.0 seconds (IMPORT FAILED): C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-dream-video-batches
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\rgthree-comfy
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Frame-Interpolation
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-AnimateDiff-Evolved
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\Derfuu_ComfyUI_ModdedNodes
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_Comfyroll_CustomNodes
+[2024-03-30 23:45]    0.0 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfy_mtb
+[2024-03-30 23:45]    0.3 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Impact-Pack
+[2024-03-30 23:45]    0.4 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-Manager
+[2024-03-30 23:45]    0.6 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI-N-Nodes
+[2024-03-30 23:45]    0.7 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\ComfyUI_tinyterraNodes
+[2024-03-30 23:45]    0.9 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\comfyui-art-venture
+[2024-03-30 23:45]    0.9 seconds: C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\custom_nodes\was-node-suite-comfyui
+[2024-03-30 23:45] 
+[2024-03-30 23:45] Traceback (most recent call last):
+[2024-03-30 23:45]   File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\main.py", line 253, in <module>
+[2024-03-30 23:45]     loop.run_until_complete(run(server, address=args.listen, port=args.port, verbose=not args.dont_print_server, call_on_start=call_on_start))
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\base_events.py", line 641, in run_until_complete
+[2024-03-30 23:45]     return future.result()
+[2024-03-30 23:45]   File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\main.py", line 148, in run
+[2024-03-30 23:45]     await asyncio.gather(server.start(address, port, verbose, call_on_start), server.publish_loop())
+[2024-03-30 23:45]   File "C:\Users\mkski\ComfyUI_windows_portable_nvidia_cu121_or_cpu\ComfyUI_windows_portable\ComfyUI\server.py", line 627, in start
+[2024-03-30 23:45]     await site.start()
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\lib\site-packages\aiohttp\web_runner.py", line 119, in start
+[2024-03-30 23:45]     self._server = await loop.create_server(
+[2024-03-30 23:45]   File "C:\Users\mkski\AppData\Local\Programs\Python\Python310\Lib\asyncio\base_events.py", line 1493, in create_server
+[2024-03-30 23:45]     raise OSError(err.errno, 'error while attempting '
+[2024-03-30 23:45] OSError: [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8188): only one usage of each socket address (protocol/network address/port) is normally permitted
