@@ -1,27 +1,39 @@
+
+
 ### IMPORTANT CONFIGS !!!
 
-USE_GEN_IMAGES = False
-SAVE_GEN_IMAGES = True
-#keep all generated frames in memory for use, other wise limit cache
-CACHE = True 
+# Store all generative images - When set to true, this will keep all generated images in the generated_images directory
+# When set to False images are overwritten each run.
+STORE_ALL_GEN_IMAGES = True
+# When set to True - Use Generative Images (Images in the generated_images folder)
+# for the simple_interpolate_api run, When set to false use the src_directory parameter 
+# This flag does override the src_dir parameter
+USE_GEN_IMAGES = True
+# When set to True - Save generated frames 
+# for the simple_interpolate_api run, When set to false
+SAVE_GEN_IMAGES = False
 
 
-BASE_NEG_PROMPT = "vase, clay, cartoon, anime, 3d, painting, b&w, pottery, colorful, fake, bright, blue, bowl, grass, text, brick "
+# negative prompting for all calabash generations 
+BASE_NEG_PROMPT = "cartoon, anime, 3d, painting, b&w, pottery, colorful, fake, bright, blue, bowl, grass, text, "
 
 
-
+# models that are trained on subsets of the calabash dataset, each has their own style
 models =[
     "SD1.5\\cccb_burn_400.safetensors", 
     "SD1.5\\cccb.safetensors",
     "SD1.5\\calabash2-200-realistic.safetensors",
-    # "SD1.5\\calabash_aerial.safetensors" # cropping this out because it produces pottery shapes :(
+    # "SD1.5\\calabash_aerial.safetensors" # taking this out because it produces pottery clay outputs sometimes.
  ]
 
+
+# Positive prompting specific to each trained model, can tinker with these if you want to create variation in output but be wary, they can greatly change the 
+# output so test before commiting
 model_pos_prompts = {
-    "SD1.5\\calabash_aerial.safetensors": "xyz calabash, circle, hight quality, side lighting, closeups, organic, squash imperfect",
-    "SD1.5\\cccb_burn_400.safetensors" : "photo of cccb, circle, high quality, organic",   # add calabash?
+    "SD1.5\\calabash_aerial.safetensors": "xyz calabash, hight quality, side lighting, closeups, circle, organic, gourd, imperfect",
+    "SD1.5\\cccb_burn_400.safetensors" : "photo of cccb, circle, high quality",   # add calabash?
     "SD1.5\\cccb.safetensors": "photo of a cccb calabash, textured background", # can take out textured background for closer to original look
-    "SD1.5\\calabash2-200-realistic.safetensors" : "photo of xyz calabash, circle, organic, squash, high quality, photo realistic"
+    "SD1.5\\calabash2-200-realistic.safetensors" : "xyz calabash, organic, squash"
 }
 
 model_neg_prompts = {
@@ -31,10 +43,10 @@ model_neg_prompts = {
      "SD1.5\\calabash2-200-realistic.safetensors": BASE_NEG_PROMPT,
 }
 
-
+# samplers ifluence the style of generated frames. I have found the uncommented ones below to be fairly consistant/good 
 samplers = [
             "euler", 
-            # "euler_ancestral", 
+            "euler_ancestral", 
             "heun", 
             "heunpp2",
             # "dpm_2",
@@ -56,6 +68,7 @@ samplers = [
             # "k_lcm",
             ]
 
+# similar to samplers can effect style of generated frames
 schedulers = ["normal", 
             "karras", 
             "exponential", 
