@@ -2,7 +2,7 @@
 
 ### IMPORTANT CONFIGS !!!
 
-# Store all generative images - When set to true, this will keep all generated images in the generated_images directory
+# Store all generative images - When set to true, this will aggregate all generated images in the generated_images directory
 # When set to False images are overwritten each run.
 STORE_ALL_GEN_IMAGES = True
 # When set to True - Use Generative Images (Images in the generated_images folder)
@@ -15,7 +15,7 @@ SAVE_GEN_IMAGES = False
 
 
 # negative prompting for all calabash generations 
-BASE_NEG_PROMPT = "vase, clay, cartoon, anime, painting, b&w, pottery, colorful, fake, bright, bowl, grass, text, "
+BASE_NEG_PROMPT = "vase, clay, cartoon, anime, painting, b&w, pottery, colorful, fake, bright, bowl, grass, text, grass, polished, plastic"
 
 
 # models that are trained on subsets of the calabash dataset, each has their own style
