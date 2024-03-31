@@ -396,7 +396,7 @@ with open("workflows/specialized_model_api.json", "r", encoding="utf-8") as f:
 with open("workflows/simple_interpolation_load_from_path_api.json", "r", encoding="utf-8") as f:
     simple_interpolation = f.read()
     
-with open("workflows/upscale_api.json", "r", encoding="utf-8") as f:
+with open("workflows/upscale720x1080_api.json", "r", encoding="utf-8") as f:
     upscale_frames = f.read()
 
         # load comfy workflows
