@@ -339,8 +339,8 @@ def save_images(images, folder, save_for_later):
         for image_data in images[node_id]:
             image_path = BASE_DIR +"/"+ folder +"/"
             global img_count 
-            if(not os.path.isdir(folder)):
-                os.mkdir(image_path)
+            # if(not os.path.isdir(folder)):
+            #     os.mkdir(image_path)
             # output will still save if save is configured in confy ui workflow 
             # would be better to save here to have control over how ouput is saved
             file_name = create_file_name(image_path, img_count) 
